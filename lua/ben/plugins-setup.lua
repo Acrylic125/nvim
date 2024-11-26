@@ -11,6 +11,7 @@ local ensure_packer = function()
   return false
 end
 
+
 local packer_bootstrap = ensure_packer()
 
 vim.cmd([[
@@ -30,7 +31,9 @@ end
 return packer.startup(function(use)
     use('wbthomason/packer.nvim')
     use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-    use({ 'Everblush/nvim', as = 'everblush' })
+    use("navarasu/onedark.nvim") -- color scheme
+    -- use("folke/tokyonight.nvim") -- color scheme
+    -- use({ 'Everblush/nvim', as = 'everblush' })
     use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
     use("szw/vim-maximizer") -- maximizes and restores current window
 
@@ -75,6 +78,9 @@ return packer.startup(function(use)
     -- }) -- enh anced lsp uis
     use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
     use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+    -- Lush, for custom themes.
+    use('rktjmp/lush.nvim')
 
     if packer_bootstrap then
         require('packer').sync()

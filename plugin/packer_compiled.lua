@@ -99,11 +99,6 @@ _G.packer_plugins = {
     path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  everblush = {
-    loaded = true,
-    path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/everblush",
-    url = "https://github.com/Everblush/nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -126,6 +121,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -156,6 +156,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
