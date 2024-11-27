@@ -11,7 +11,6 @@ local ensure_packer = function()
   return false
 end
 
-
 local packer_bootstrap = ensure_packer()
 
 vim.cmd([[
@@ -81,6 +80,14 @@ return packer.startup(function(use)
 
     -- Lush, for custom themes.
     use('rktjmp/lush.nvim')
+    -- Auto pair 
+    use({
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    })
 
     if packer_bootstrap then
         require('packer').sync()
