@@ -114,3 +114,19 @@ lspconfig["sourcekit"].setup({
     on_attach = on_attach,
 })
 
+-- JSON
+lspconfig["biome"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
+-- Astro
+lspconfig["astro"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
+lspconfig["pyright"].setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})

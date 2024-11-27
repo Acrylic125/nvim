@@ -26,6 +26,11 @@ if not status then
   return
 end
 
+-- TODO: Change the path to the absolute path of the venv
+-- comprising your neovim's python deps.
+local python_venv_path = "/Users/benedicttan/.config/nvim/python/neovim/bin/python3"
+vim.g.python3_host_prog=vim.fn.expand(python_venv_path)
+
 -- add list of plugins to install
 return packer.startup(function(use)
     use('wbthomason/packer.nvim')
@@ -78,8 +83,15 @@ return packer.startup(function(use)
     use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
     use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
+    -- Jupyter Notebooks
+    -- use({
+    --     "benlubas/molten-nvim",
+    --     version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
+    --     build = ":UpdateRemotePlugins",
+    -- })
+
     -- Lush, for custom themes.
-    use('rktjmp/lush.nvim')
+    -- use('rktjmp/lush.nvim')
     -- Auto pair 
     use({
         "windwp/nvim-autopairs",
