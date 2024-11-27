@@ -59,11 +59,10 @@ return packer.startup(function(use)
     use("saadparwaiz1/cmp_luasnip") -- for autocompletion
     use("rafamadriz/friendly-snippets") -- useful snippets
 
-      -- managing & installing lsp servers, linters & formatters
+    -- managing & installing lsp servers, linters & formatters
     use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
     use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
     use("neovim/nvim-lspconfig") -- easily configure language servers
-
     use("hrsh7th/cmp-nvim-lsp") -- for autocompletion 
     use ({
        'nvimdev/lspsaga.nvim',
@@ -72,16 +71,17 @@ return packer.startup(function(use)
            require('lspsaga').setup({})
        end,
     })
-    -- use({ 
-    --     "glepni r/lspsaga.nvim",
-    --     branch  = "main",
-    --     require = {
-    --         { "nv im-tree/nvim-web-devicons" },
-    --         { "nv im-treesitter/nvim-treesitter" },
-    --     },
-    -- }) -- enh anced lsp uis
     use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
     use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
+
+    -- formatting & linting
+    use({
+        "nvimtools/none-ls.nvim",
+        dependencies = {
+            "nvimtools/none-ls-extras.nvim",
+        },
+    }) -- configure formatters & linters
+    use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
     -- Jupyter Notebooks
     -- use({
@@ -92,6 +92,7 @@ return packer.startup(function(use)
 
     -- Lush, for custom themes.
     -- use('rktjmp/lush.nvim')
+
     -- Auto pair 
     use({
         "windwp/nvim-autopairs",
