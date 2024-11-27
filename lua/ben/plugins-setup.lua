@@ -77,8 +77,8 @@ return packer.startup(function(use)
     -- formatting & linting
     use({
         "nvimtools/none-ls.nvim",
-        dependencies = {
-            "nvimtools/none-ls-extras.nvim",
+        requires = {
+            'nvimtools/none-ls-extras.nvim',
         },
     }) -- configure formatters & linters
     use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls

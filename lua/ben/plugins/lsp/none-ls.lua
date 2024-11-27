@@ -16,17 +16,15 @@ null_ls.setup({
 	-- setup formatters & linters
 	sources = {
 		--  to disable file types use
-		--  "formatting.prettier.with({disabled_filetypes = {}})" (see null-ls docs)
 		formatting.prettier.with({
 			command = "npx",
 			args = { "prettier", "--stdin-filepath", "$FILENAME" },
 		}),
-		formatting.fish,
 		formatting.gofumpt,
 		formatting.goimports,
 		formatting.golines,
 		formatting.stylua, -- lua formatter
-		--require("none-ls.diagnostics.eslint_d"),
+        require("none-ls.diagnostics.eslint_d"), -- requires none-ls-extras.nvim
 		-- diagnostics.eslint_d.with({ -- js/ts linter
 		--   -- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 		--   condition = function(utils)
