@@ -105,9 +105,31 @@ return packer.startup(function(use)
 	-- Comments
 	use({
 		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup()
-		end,
+		-- config = function()
+		-- 	require("Comment").setup({
+		-- 		mappings = {
+		-- 			-- Disable the default mappings
+		-- 			basic = false,
+		-- 			-- Disable extra mappings
+		-- 			extra = false,
+		-- 		},
+		-- 		-- Custom keymapping
+		-- 		-- toggler = {
+		-- 		-- 	line = "<C-/>",
+		-- 		-- },
+		-- 		-- opleader = {
+		-- 		-- 	line = "<C-/>",
+		-- 		-- },
+		-- 	})
+		--
+		-- 	vim.keymap.set("x", "<C-_>", function()
+		-- 		require("Comment.api").toggle.linewise.visual()
+		-- 	end, { noremap = true, silent = true })
+		-- 	vim.keymap.set("n", "<C-_>", function()
+		-- 		require("Comment.api").toggle.linewise.current()
+		-- 	end, { noremap = true, silent = true })
+		-- 	print("Test Comment 4")
+		-- end,
 	})
 
 	if packer_bootstrap then
