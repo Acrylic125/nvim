@@ -1,4 +1,4 @@
--- https://www.youtube.com/watch?v=vdn_pKJUda8
+-- https://www.youtube.com/watch?v=vdn_pKJUda9
 
 local ensure_packer = function()
 	local fn = vim.fn
@@ -130,6 +130,13 @@ return packer.startup(function(use)
 		-- 	end, { noremap = true, silent = true })
 		-- 	print("Test Comment 4")
 		-- end,
+	})
+
+	-- Harpoon
+	use({
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
 	if packer_bootstrap then
