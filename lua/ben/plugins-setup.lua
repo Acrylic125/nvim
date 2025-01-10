@@ -139,6 +139,14 @@ return packer.startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
 
+	use({
+		"MysticalDevil/inlay-hints.nvim",
+		requires = { "neovim/nvim-lspconfig" },
+		config = function()
+			require("inlay-hints").setup()
+		end,
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

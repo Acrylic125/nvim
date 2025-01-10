@@ -9,6 +9,7 @@
    - [Stylua](https://github.com/JohnnyMorganz/StyLua)
    - [Golang](https://go.dev/doc/install)
    - [Swift Format](https://github.com/swiftlang/swift-format)
+   - [Copilot](https://github.com/github/copilot.vim)
 1. Setup terminal font to [Hack Nerd Font](https://www.nerdfonts.com/) on your terminal.
 1. Have fun!
 

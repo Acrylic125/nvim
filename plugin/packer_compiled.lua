@@ -114,6 +114,12 @@ _G.packer_plugins = {
     path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
   },
+  ["inlay-hints.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16inlay-hints\frequire\0" },
+    loaded = true,
+    path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/inlay-hints.nvim",
+    url = "https://github.com/MysticalDevil/inlay-hints.nvim"
+  },
   ["lspkind.nvim"] = {
     loaded = true,
     path = "/Users/benedicttan/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
@@ -228,6 +234,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: inlay-hints.nvim
+time([[Config for inlay-hints.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16inlay-hints\frequire\0", "config", "inlay-hints.nvim")
+time([[Config for inlay-hints.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-lspconfig ]]

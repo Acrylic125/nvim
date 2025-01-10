@@ -10,6 +10,12 @@ if not cmp_nvim_lsp_status then
 	return
 end
 
+-- import null-ls plugin safely
+local inlay_hints_setup, inlay_hints = pcall(require, "inlay-hints")
+if not inlay_hints_setup then
+	return
+end
+
 -- import typescript plugin safely
 -- local typescript_setup, typescript = pcall(require, "typescript")
 -- if not typescript_setup then
@@ -67,6 +73,32 @@ lspconfig["html"].setup({
 lspconfig["ts_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		typescript = {
+			inlayHints = {
+				includeInlayParameterNameHints = "all",
+				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayVariableTypeHints = true,
+				includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayEnumMemberValueHints = true,
+			},
+		},
+		javascript = {
+			inlayHints = {
+				includeInlayParameterNameHints = "all",
+				includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+				includeInlayFunctionParameterTypeHints = true,
+				includeInlayVariableTypeHints = true,
+				includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+				includeInlayPropertyDeclarationTypeHints = true,
+				includeInlayFunctionLikeReturnTypeHints = true,
+				includeInlayEnumMemberValueHints = true,
+			},
+		},
+	},
 })
 
 -- configure css server
@@ -94,6 +126,9 @@ lspconfig["lua_ls"].setup({
 	on_attach = on_attach,
 	settings = { -- custom settings for lua
 		Lua = {
+			hint = {
+				enable = true, -- necessary
+			},
 			-- make the language server recognize "vim" global
 			diagnostics = {
 				globals = { "vim" },
@@ -111,6 +146,7 @@ lspconfig["lua_ls"].setup({
 
 lspconfig["sourcekit"].setup({
 	capabilities = capabilities,
+	filetypes = { "swift", "objective-c", "objective-cpp" },
 	on_attach = on_attach,
 })
 
@@ -125,13 +161,63 @@ lspconfig["astro"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
+--
+-- lspconfig["pylyzer"].setup({
+-- 	capabilities = capabilities,
+-- 	on_attach = on_attach,
+-- 	python = {
+-- 		checkOnType = false,
+-- 		diagnostics = false,
+-- 		inlayHints = true,
+-- 		smartCompletion = false,
+-- 	},
+-- })
+--
 
 lspconfig["pyright"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		basedpyright = {
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "openFilesOnly",
+				useLibraryCodeForTypes = true,
+			},
+		},
+	},
+})
+
+lspconfig["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		gopls = {
+			hints = {
+				rangeVariableTypes = true,
+				parameterNames = true,
+				constantValues = true,
+				assignVariableTypes = true,
+				compositeLiteralFields = true,
+				compositeLiteralTypes = true,
+				functionTypeParameters = true,
+			},
+		},
+	},
 })
 
 lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		clangd = {
+			InlayHints = {
+				Designators = true,
+				Enabled = true,
+				ParameterNames = true,
+				DeducedTypes = true,
+			},
+			fallbackFlags = { "-std=c++20" },
+		},
+	},
 })
