@@ -28,8 +28,8 @@ end
 
 -- TODO: Change the path to the absolute path of the venv
 -- comprising your neovim's python deps.
-local python_venv_path = "/Users/benedicttan/.config/nvim/python/neovim/bin/python3"
-vim.g.python3_host_prog = vim.fn.expand(python_venv_path)
+-- local python_venv_path = "/Users/benedicttan/.config/nvim/python/neovim/bin/python3"
+-- vim.g.python3_host_prog = vim.fn.expand(python_venv_path)
 
 -- add list of plugins to install
 return packer.startup(function(use)

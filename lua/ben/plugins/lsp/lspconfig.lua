@@ -148,6 +148,9 @@ lspconfig["sourcekit"].setup({
 	capabilities = capabilities,
 	filetypes = { "swift", "objective-c", "objective-cpp" },
 	on_attach = on_attach,
+	settings = {
+		timeout = 5000, -- Increase timeout in ms
+	},
 })
 
 -- JSON
@@ -218,6 +221,23 @@ lspconfig["clangd"].setup({
 				DeducedTypes = true,
 			},
 			fallbackFlags = { "-std=c++20" },
+		},
+	},
+})
+
+lspconfig["jdtls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	settings = {
+		format = {
+			settings = {
+				enable = false,
+			},
+		},
+		inlay_hints = {
+			parameterNames = {
+				enabled = "all",
+			},
 		},
 	},
 })
