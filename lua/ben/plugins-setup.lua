@@ -147,6 +147,8 @@ return packer.startup(function(use)
 		end,
 	})
 
+	use()
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
