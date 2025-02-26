@@ -75,13 +75,15 @@ return packer.startup(function(use)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
 	-- formatting & linting
-	use({
-		"nvimtools/none-ls.nvim",
-		requires = {
-			"nvimtools/none-ls-extras.nvim",
-		},
-	}) -- configure formatters & linters
-	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+	-- use({
+	-- 	"nvimtools/none-ls.nvim",
+	-- 	requires = {
+	-- 		"nvimtools/none-ls-extras.nvim",
+	-- 	},
+	-- }) -- configure formatters & linters
+	-- use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+
+	use("stevearc/conform.nvim")
 
 	-- Jupyter Notebooks
 	-- use({
